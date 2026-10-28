@@ -84,6 +84,7 @@ Sign-in uses JobOps accounts by default, and can also use Google, GitHub, or any
 | UK Visa Jobs | Sponsorship (UK) |
 | Golang Jobs | Go developers |
 | Seek | Australia/NZ (via Apify) |
+| LinkedIn / Indeed (Scavio) | Global / US (via Scavio API) |
 | WUZZUF | Egypt (Job Board) |
 | Khamsat | Egypt (Freelance) |
 

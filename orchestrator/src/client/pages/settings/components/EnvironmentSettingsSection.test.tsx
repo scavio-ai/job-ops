@@ -33,6 +33,7 @@ const EnvironmentSettingsHarness = () => {
       ukvisajobsPassword: "",
       adzunaAppId: "adzuna-id",
       adzunaAppKey: "",
+      scavioApiKey: "",
       webhookSecret: "",
     },
   });
@@ -50,6 +51,7 @@ const EnvironmentSettingsHarness = () => {
               private: {
                 ukvisajobsPasswordHint: "pass",
                 adzunaAppKeyHint: "adzu",
+                scavioApiKeyHint: null,
                 webhookSecretHint: "sec-",
               },
             }}

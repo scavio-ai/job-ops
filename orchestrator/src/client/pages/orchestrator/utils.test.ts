@@ -44,6 +44,16 @@ describe("orchestrator utils", () => {
     expect(getEnabledSources(withoutToken)).not.toContain("seek");
   });
 
+  it("enables Scavio sources only when a Scavio API key is configured", () => {
+    const withKey = createAppSettings({ scavioApiKeyHint: "sk_l" });
+    const withoutKey = createAppSettings({ scavioApiKeyHint: null });
+    expect(getEnabledSources(withKey)).toEqual(
+      expect.arrayContaining(["scavio_linkedin", "scavio_indeed"]),
+    );
+    expect(getEnabledSources(withoutKey)).not.toContain("scavio_linkedin");
+    expect(getEnabledSources(withoutKey)).not.toContain("scavio_indeed");
+  });
+
   it("counts processing jobs in ready and discovered tabs", () => {
     const jobs = [
       createJob({ id: "ready", status: "ready", closedAt: null }),

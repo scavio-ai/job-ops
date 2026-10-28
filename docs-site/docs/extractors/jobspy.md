@@ -47,6 +47,7 @@ In Map radius mode, JobOps searches named cities and towns within the selected c
 - **A search completed without adding jobs.** Check its saved details for source errors. Jobs can also be removed by location filtering or skipped because their URLs already exist. A completed run does not guarantee new listings.
 - **Hybrid or onsite searches return remote jobs.** JobSpy only provides a strict remote toggle. Remote-only searches enable it; selections containing hybrid or onsite run without that toggle and can return broader results.
 - **LinkedIn descriptions are missing.** Check whether `JOBSPY_LINKEDIN_FETCH_DESCRIPTION` is disabled.
+- **LinkedIn or Indeed return nothing from a server.** Both sites often block datacenter IP addresses. The optional [Scavio](/docs/next/extractors/scavio) sources make those requests through a paid API instead.
 - **Different cities need different workplace filters.** One workplace selection applies to every query in a run.
 
 ## Related pages

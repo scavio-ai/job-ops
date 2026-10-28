@@ -47,6 +47,7 @@ export type EnvSettingsValues = {
   private: {
     ukvisajobsPasswordHint: string | null;
     adzunaAppKeyHint: string | null;
+    scavioApiKeyHint: string | null;
     webhookSecretHint: string | null;
   };
 };

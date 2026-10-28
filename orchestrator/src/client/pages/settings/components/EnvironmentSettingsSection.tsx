@@ -297,6 +297,21 @@ export const EnvironmentSettingsSection: React.FC<
               />
             </div>
           </div>
+
+          <div className="space-y-4">
+            <div className="text-sm font-semibold">Scavio</div>
+            <div className="grid gap-4 md:grid-cols-2">
+              <SettingsInput
+                label="API Key"
+                inputProps={register("scavioApiKey")}
+                type="password"
+                placeholder="Enter new API key"
+                disabled={isLoading || isSaving}
+                error={errors.scavioApiKey?.message as string | undefined}
+                current={formatSecretHint(privateValues.scavioApiKeyHint)}
+              />
+            </div>
+          </div>
         </div>
 
         <Separator />

@@ -311,6 +311,7 @@ export const createAppSettings = (
   adzunaAppId: null,
   adzunaAppKeyHint: null,
   apifyTokenHint: null,
+  scavioApiKeyHint: null,
   webhookSecretHint: null,
   backupEnabled: { value: false, default: false, override: null },
   backupHour: { value: 3, default: 3, override: null },

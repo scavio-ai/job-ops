@@ -974,6 +974,11 @@ export const settingsRegistry = {
     envKey: "APIFY_TOKEN",
     schema: z.string().trim().max(2000),
   },
+  scavioApiKey: {
+    kind: "secret" as const,
+    envKey: "SCAVIO_API_KEY",
+    schema: z.string().trim().max(2000),
+  },
   webhookSecret: {
     kind: "secret" as const,
     envKey: "WEBHOOK_SECRET",

@@ -101,6 +101,7 @@ const DEFAULT_FORM_VALUES: UpdateSettingsInput = {
   ukvisajobsPassword: "",
   adzunaAppId: "",
   adzunaAppKey: "",
+  scavioApiKey: "",
   webhookSecret: "",
   backupEnabled: null,
   backupHour: null,
@@ -364,6 +365,7 @@ const SECTION_FIELD_MAP: Record<
     "ukvisajobsPassword",
     "adzunaAppId",
     "adzunaAppKey",
+    "scavioApiKey",
   ],
   display: [
     "showSponsorInfo",
@@ -461,6 +463,7 @@ const NULL_SETTINGS_PAYLOAD: UpdateSettingsInput = {
   adzunaAppId: null,
   adzunaAppKey: null,
   adzunaMaxJobsPerTerm: null,
+  scavioApiKey: null,
   webhookSecret: null,
   backupEnabled: null,
   backupHour: null,
@@ -530,6 +533,7 @@ const mapSettingsToForm = (data: AppSettings): UpdateSettingsInput => ({
   ukvisajobsPassword: "",
   adzunaAppId: data.adzunaAppId ?? "",
   adzunaAppKey: "",
+  scavioApiKey: "",
   webhookSecret: "",
   backupEnabled: data.backupEnabled.override,
   backupHour: data.backupHour.override,
@@ -740,6 +744,7 @@ const getDerivedSettings = (settings: AppSettings | null) => {
       private: {
         ukvisajobsPasswordHint: settings?.ukvisajobsPasswordHint ?? null,
         adzunaAppKeyHint: settings?.adzunaAppKeyHint ?? null,
+        scavioApiKeyHint: settings?.scavioApiKeyHint ?? null,
         webhookSecretHint: settings?.webhookSecretHint ?? null,
       },
     },
@@ -1188,6 +1193,11 @@ export const SettingsPage: React.FC = () => {
       if (dirtyFields.adzunaAppKey) {
         const value = normalizePrivateInput(data.adzunaAppKey);
         if (value !== undefined) envPayload.adzunaAppKey = value;
+      }
+
+      if (dirtyFields.scavioApiKey) {
+        const value = normalizePrivateInput(data.scavioApiKey);
+        if (value !== undefined) envPayload.scavioApiKey = value;
       }
 
       if (dirtyFields.webhookSecret) {

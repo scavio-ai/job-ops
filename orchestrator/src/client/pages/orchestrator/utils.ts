@@ -295,13 +295,16 @@ export const getEnabledSources = (
     settings.adzunaAppId?.trim() && settings.adzunaAppKeyHint,
   );
   const hasApifyToken = Boolean(settings.apifyTokenHint);
+  const hasScavioKey = Boolean(settings.scavioApiKeyHint);
 
   for (const source of orderedSources) {
     if (
       !EXTRACTOR_SOURCE_METADATA[source].requiresCredentials ||
       (source === "ukvisajobs" && hasUkVisaJobsAuth) ||
       (source === "adzuna" && hasAdzunaAuth) ||
-      (source === "seek" && hasApifyToken)
+      (source === "seek" && hasApifyToken) ||
+      ((source === "scavio_linkedin" || source === "scavio_indeed") &&
+        hasScavioKey)
     ) {
       enabled.push(source);
     }

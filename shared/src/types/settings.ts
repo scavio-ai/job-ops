@@ -325,6 +325,7 @@ export interface AppSettings {
   ukvisajobsPasswordHint: string | null;
   adzunaAppKeyHint: string | null;
   apifyTokenHint: string | null;
+  scavioApiKeyHint: string | null;
   webhookSecretHint: string | null;
 
   // Computed:
